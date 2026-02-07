@@ -132,27 +132,35 @@ function initializeMainScreen() {
     }
 
     // --- Add Credits Text ---
-    const attributionDiv = document.createElement('div');
-    attributionDiv.className = 'attribution-text';
+        const attributionDiv = document.createElement('div');
     attributionDiv.style.cssText = `
-        position: fixed;
-        bottom: 10px;
-        width: 100%;
+        position: absolute;
+        bottom: 4px;           /* Sangat mepet ke bawah agar tidak menabrak tombol menu */
+        left: 0;
+        right: 0;
         text-align: center;
-        font-size: 12px;
-        color: #888;
-        line-height: 1.5;
-        z-index: 1000;
+        font-size: 6.5px;      /* Ukuran mikro agar tetap elegan */
+        color: rgba(15, 56, 15, 0.5); /* Warna hijau samar agar tidak mendominasi layar */
+        font-family: 'Courier New', monospace;
+        line-height: 1.2;
+        z-index: 1;            /* Di bawah tombol agar tidak menghalangi klik */
         pointer-events: none;
+        letter-spacing: 0.2px;
     `;
     
     attributionDiv.innerHTML = `
         Fork & Modified by @studywithlina_ , NurrohAwalina (github)<br>
         Original repository by heryyy (github)
     `;
+
+    // Pilih elemen layar hijau utama
+    const screenContainer = document.querySelector('.screen.active') || document.querySelector('.screen');
     
-    document.body.appendChild(attributionDiv);
-    // -----------------------------------------
+    if (screenContainer) {
+        // Pastikan posisi container layar adalah relative agar teks absolute bisa menempel di bawahnya
+        screenContainer.style.position = 'relative'; 
+        screenContainer.appendChild(attributionDiv);
+    }
 
     // Add hover effects for menu buttons
     menuButtons.forEach(btn => {
