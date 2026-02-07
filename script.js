@@ -130,7 +130,30 @@ function initializeMainScreen() {
             }, 150);
         });
     }
+
+    // --- Add Credits Text ---
+    const attributionDiv = document.createElement('div');
+    attributionDiv.className = 'attribution-text';
+    attributionDiv.style.cssText = `
+        position: fixed;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        line-height: 1.5;
+        z-index: 1000;
+        pointer-events: none;
+    `;
     
+    attributionDiv.innerHTML = `
+        Fork & Modified by @studywithlina_ , NurrohAwalina (github)<br>
+        Original repository by heryyy (github)
+    `;
+    
+    document.body.appendChild(attributionDiv);
+    // -----------------------------------------
+
     // Add hover effects for menu buttons
     menuButtons.forEach(btn => {
         btn.addEventListener('mouseenter', function() {
@@ -224,7 +247,7 @@ function startTypewriter() {
     if (!messageContent) return;
     
     const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
-FROM: SOME OF INDONESIAN VIEWERS
+FROM: SOME INDONESIAN VIEWERS
 
 HI ALL! 👋
 
