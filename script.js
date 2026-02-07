@@ -231,7 +231,7 @@ HI ALL! 👋
 Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch. 
 We've prepared some letters to share our thoughts. Please clik the "Gdrive Letters" main menu/button to acces and read them. 
 
-Thank you for reading this letter! 🙌
+Thank you for reading this short massage! 🙌
 
 Forked & Modified by @studywithlina_ NurrohAwalina (github)
 Original repository by heryyy (github)`;
