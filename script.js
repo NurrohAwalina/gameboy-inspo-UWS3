@@ -224,7 +224,7 @@ function startTypewriter() {
     if (!messageContent) return;
     
     const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
-FROM: INDONESIA VIEWERS
+FROM: SOME OF INDONESIAN VIEWERS
 
 HI ALL! 👋
 
