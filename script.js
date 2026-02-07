@@ -7,7 +7,7 @@ let gameLines = 0;
 let typewriterInterval = null;
 let isTyping = false;
 let currentPhotoIndex = 0;
-let currentMusicIndex = 0;
+let currentGdriveLettersIndex = 0;
 let isPlaying = false;
 let playbackInterval = null;
 
@@ -168,9 +168,9 @@ function showScreen(screenName) {
                     initializeGallery();
                 }, 100);
                 break;
-            case 'music':
+            case 'gdrive-letters':
                 setTimeout(() => {
-                    initializeMusicPlayer();
+                    initializeGdriveLettersPlayer();
                 }, 100);
                 break;
             case 'tetris':
@@ -199,7 +199,7 @@ function initializeMessage() {
     const pageScreen = messageScreen.querySelector('.page-screen');
     if (pageScreen) {
         pageScreen.innerHTML = `
-            <div class="page-header">Message</div>
+            <div class="page-header">Short Massage</div>
             <div class="message-content">
                 <!-- Content will be populated by typewriter -->
             </div>
@@ -223,15 +223,18 @@ function startTypewriter() {
     const messageContent = document.querySelector('.message-content');
     if (!messageContent) return;
     
-    const fullMessage = `Hi,
+    const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
+FROM: INDONESIA VIEWERS
 
-Happy Birthday!
+HI ALL! 👋
 
-Hari ini aku pengen kamu ngerasain semua hal positif dan keajaiban yang cuma bisa didapetin kalo kamu ada di dunia ini. Semoga segala keinginanmu tercapai, apalagi yang kocak-kocak dan gak biasa, karena kamu tuh unik banget! Aku selalu percaya kalau kamu bisa melewati semua tantangan dengan kekuatan dan semangat yang luar biasa.
+Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch. 
+We've prepared some letters to share our thoughts. Please clik the "Gdrive Letters" main menu/button to acces and read them. 
 
-Terima kasih udah jadi bagian hidup aku yang paling berharga. Kamu bener-bener bikin hari-hari aku jadi lebih berarti dan penuh warna. Semoga di tahun yang baru ini, kamu makin bahagia, makin sukses, dan tentunya makin cantik (walaupun udah cantik banget sih!).
+Thank you for reading this letter! 🙌
 
-I love you so much! 💕`;
+Forked & Modified by @studywithlina_ NurrohAwalina (github)
+Original repository by heryyy (github)`;
     
     // Clear content and start fresh
     messageContent.innerHTML = '';
@@ -291,10 +294,10 @@ function initializeGallery() {
         </div>
         <div class="photobox-progress">READY TO PRINT</div>
         <div class="photo-display">
-            <div class="photo-placeholder">Press MULAI CETAK to start photo session</div>
+            <div class="photo-placeholder">Press START PRINTING to start photo session</div>
         </div>
         <div class="photobox-controls">
-            <button class="photo-btn">MULAI CETAK</button>
+            <button class="photo-btn">START PRINTING</button>
         </div>
     `;
     
@@ -322,42 +325,42 @@ function startPhotoShow() {
     // Foto lokal dari folder images
     const photos = [
         {
-            text: 'Our First Date 💕',
-            image: './images/photo1.jpg'
+            text: '🎲 University War S3 🧩',
+            image: './images/UW S3.jpg'
         },
         {
-            text: 'Birthday Moment 🎂',
-            image: './images/photo2.jpg'
+            text: '🩺 SNU Medical 🥇',
+            image: './images/SNU MED.jpg'
         },
         {
-            text: 'Adventure Time 🌟',
-            image: './images/photo3.jpg'
+            text: '🩺 SKKU MED 🥈',
+            image: './images/SKKU MED.jpg'
         },
         {
-            text: 'Cozy Together ❤️',
-            image: './images/photo4.jpg'
+            text: '🔋 KAIST STEM 🥉',
+            image: './images/KAIST STEM.jpg'
         },
         {
-            text: 'Sweet Memories 🥰',
-            image: './images/photo5.jpg'
+            text: '🛠️ SNU STEM 🎯',
+            image: './images/SNU STEM.jpg'
         },
         {
-            text: 'Laugh Together 😂',
-            image: './images/photo6.jpg'
+            text: '🧪 YONSEI MED 🩺',
+            image: './images/YONSEI MED.jpg'
         },
         {
-            text: 'Perfect Day ☀️',
-            image: './images/photo7.jpg'
+            text: '⚒️ POSTECH STEM ⚙️',
+            image: './images/POSTECH STEM.jpg'
         },
         {
-            text: 'Love Forever 💖',
-            image: './images/photo8.jpg'
+            text: '✨ Bonus Photo 📸',
+            image: './images/Bonus.jpg'
         }
     ];
     
     console.log('Total photos:', photos.length);
     
-    photoBtn.textContent = 'MENCETAK...';
+    photoBtn.textContent = 'PRINTING...';
     photoBtn.disabled = true;
     progressDiv.textContent = 'INITIALIZING CAMERA...';
     
@@ -378,7 +381,7 @@ function startPhotoShow() {
             <div class="photo-frames-container">
                 ${framesHTML}
             </div>
-            <div class="photo-strip-footer">💕 BIRTHDAY MEMORIES 💕</div>
+            <div class="photo-strip-footer"> 📂 UNIVERSITY WAR S3 MEMORIES 📸</div>
         </div>
         <div class="scroll-indicator">⬇ Scroll Down ⬇</div>
     `;
@@ -501,7 +504,7 @@ function startPhotoCapture(photos) {
             
             setTimeout(() => {
                 progressDiv.textContent = '🎉 PHOTO STRIP COMPLETE! 🎉';
-                photoBtn.textContent = 'CETAK LAGI';
+                photoBtn.textContent = 'PRINT AGAIN';
                 photoBtn.disabled = false;
                 
                 photoBtn.removeEventListener('click', startPhotoShow);
@@ -518,8 +521,8 @@ function startNewSession() {
     console.log('=== STARTING NEW SESSION ===');
     
     // Reset for new session
-    progressDiv.textContent = 'READY TO PRINT';
-    photoBtn.textContent = 'MULAI CETAK';
+    progressDiv.textContent = 'START PRINTING';
+    photoBtn.textContent = 'START PRINTING';
     
     // Remove old listener and add original
     photoBtn.removeEventListener('click', startNewSession);
@@ -528,7 +531,7 @@ function startNewSession() {
     // Clear display
     const photoDisplay = document.querySelector('.photo-display');
     if (photoDisplay) {
-        photoDisplay.innerHTML = '<div class="photo-placeholder">Press MULAI CETAK to start photo session</div>';
+        photoDisplay.innerHTML = '<div class="photo-placeholder">Press START PRINTING to start photo session</div>';
     }
     
     // CRITICAL: Reset photo index to exactly 0
@@ -538,118 +541,46 @@ function startNewSession() {
 }
 
 
-// Music Player Functions
-function initializeMusicPlayer() {
-    const musicContent = document.querySelector('.music-content');
-    if (!musicContent) return;
+// Gdrive Letters Functions
+function initializeGdriveLettersPlayer() {
+    const gdriveLettersContent = document.querySelector('.gdrive-letters-content');
+    if (!gdriveLettersContent) return;
     
-    musicContent.innerHTML = `
-        <div class="spotify-container">
-            <div class="spotify-header">
-                <div class="spotify-logo">♪ Spotify Playlists</div>
+    // Google Drive content link (short link provided by user)
+    const gdriveUrl = 'https://bit.ly/4kjPykC';
+    
+    gdriveLettersContent.innerHTML = `
+        <div class="content-viewer-container" style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+            <!-- Button centered at top -->
+            <div style="width:100%; display:flex; justify-content:center;">
+                <button id="open-gdrive-btn" class="page-btn" style="min-width:220px;">Open GDrive in new tab</button>
             </div>
-            <div class="spotify-embed-container">
-                <iframe id="spotify-iframe" 
-                        style="border-radius:12px" 
-                        src="" 
-                        width="100%" 
-                        height="200" 
-                        frameBorder="0" 
-                        allowfullscreen="" 
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                        loading="lazy">
-                </iframe>
+
+            <!-- Decorative / narrow box replacing large iframe -->
+            <div id="gdrive-decor" style="width:220px; height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:10px; border:1px solid #ccc; background:linear-gradient(180deg,#fafafa,#f0f0f0); cursor:pointer;">
+                <div style="font-size:40px;">📁</div>
+                <div style="font-size:13px; color:#333; margin-top:6px;">Open GDrive Folder</div>
             </div>
-            <div class="playlist-controls">
-                <button class="playlist-btn active" data-playlist="1">Playlist 1</button>
-                <button class="playlist-btn" data-playlist="2">Playlist 2</button>
-                <button class="playlist-btn" data-playlist="3">Playlist 3</button>
-            </div>
-            <div class="music-info">
-                <div class="current-playlist">Now Playing: Birthday Special Mix</div>
-                <div class="playlist-description">Lagu-lagu spesial untuk hari istimewa kamu ✨</div>
-            </div>
+
+            <p style="font-size:12px; color:#666; text-align:center; max-width:360px; margin:0 12px 6px 12px;">If the folder doesn't display, click the button or the folder icon to open it in a new tab.</p>
         </div>
     `;
-    
-    // Add music player event listeners
-    addSpotifyPlayerListeners();
-    
-    // Load default playlist
-    loadSpotifyPlaylist(1);
-}
 
-function addSpotifyPlayerListeners() {
-    const playlistBtns = document.querySelectorAll('.playlist-btn');
-    
-    playlistBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            playlistBtns.forEach(b => b.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get playlist number
-            const playlistNum = parseInt(this.getAttribute('data-playlist'));
-            
-            // Load corresponding playlist
-            loadSpotifyPlaylist(playlistNum);
-        });
-    });
-}
-
-function loadSpotifyPlaylist(playlistNumber) {
-    const iframe = document.getElementById('spotify-iframe');
-    const currentPlaylist = document.querySelector('.current-playlist');
-    const playlistDescription = document.querySelector('.playlist-description');
-    
-    if (!iframe) return;
-    
-    // Playlist data - Ganti dengan link playlist Spotify kamu
-    const playlists = {
-        1: {
-            // Ganti dengan playlist pertama kamu
-            embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DWYtQSOiZF6hj?si=0b945793c2934ba1',
-            name: 'Birthday Special Mix',
-            description: 'Lagu-lagu spesial untuk hari istimewa kamu ✨'
-        },
-        2: {
-            // Ganti dengan playlist kedua kamu
-            embedUrl: 'https://open.spotify.com/embed/playlist/3gPSenyxZMdB3A54HeEruz?si=6b4dec830d4f4a48',
-            name: 'Love Songs Collection',
-            description: 'Koleksi lagu cinta terbaik untuk kita ❤️'
-        },
-        3: {
-            // Ganti dengan playlist ketiga kamu
-            embedUrl: 'https://open.spotify.com/embed/playlist/4dlQ4JHE6abxv38aae2HL1?si=95730613199e4dad',
-            name: 'Happy Memories',
-            description: 'Lagu-lagu yang mengingatkan kenangan indah 🌟'
+    // Add click handlers for open button and decorative box
+    setTimeout(() => {
+        const openBtn = document.getElementById('open-gdrive-btn');
+        const decor = document.getElementById('gdrive-decor');
+        if (openBtn) {
+            openBtn.addEventListener('click', () => {
+                window.open(gdriveUrl, '_blank');
+            });
         }
-    };
-    
-    const selectedPlaylist = playlists[playlistNumber];
-    
-    if (selectedPlaylist) {
-        // Update iframe source
-        iframe.src = selectedPlaylist.embedUrl;
-        
-        // Update info
-        if (currentPlaylist) {
-            currentPlaylist.textContent = `Now Playing: ${selectedPlaylist.name}`;
+        if (decor) {
+            decor.addEventListener('click', () => {
+                window.open(gdriveUrl, '_blank');
+            });
         }
-        
-        if (playlistDescription) {
-            playlistDescription.textContent = selectedPlaylist.description;
-        }
-        
-        // Add loading effect
-        iframe.style.opacity = '0.5';
-        
-        iframe.onload = function() {
-            this.style.opacity = '1';
-        };
-    }
+    }, 50);
 }
 
 // Tetris Game Functions
@@ -1182,9 +1113,9 @@ function handleContinueNavigation() {
             showScreen('gallery');
             break;
         case 'gallery':
-            showScreen('music');
+            showScreen('gdrive-letters');
             break;
-        case 'music':
+        case 'gdrive-letters':
             showScreen('tetris');
             break;
         default:

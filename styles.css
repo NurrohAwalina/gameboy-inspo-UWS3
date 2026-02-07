@@ -404,12 +404,12 @@ body {
     background: linear-gradient(145deg, #c0392b, #a93226);
 }
 
-.music-btn {
+.member bio-btn {
     background: linear-gradient(145deg, #9b59b6, #8e44ad);
     color: white;
 }
 
-.music-btn:hover {
+.member bio-btn:hover {
     background: linear-gradient(145deg, #8e44ad, #7d3c98);
 }
 
@@ -992,8 +992,8 @@ body {
 }
 
 
-/* Music Page Styles - Updated for Spotify */
-.music-content {
+/* Gdrive Letters Page Styles */
+.gdrive-letters-content {
     padding: 15px;
     height: calc(100% - 60px);
     overflow-y: auto;
@@ -1071,7 +1071,7 @@ body {
     border-color: #1db954;
 }
 
-.music-info {
+.gdrive-letters-info {
     text-align: center;
     margin-top: auto;
 }
