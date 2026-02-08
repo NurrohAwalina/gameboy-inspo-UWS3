@@ -323,6 +323,20 @@ body {
     text-shadow: 0 0 10px #9bbc0f;
 }
 
+/* Ensure main project title matches the original Gameboy green and is readable */
+.project-title {
+    color: #9bbc0f;
+    font-size: 16px; /* compact and readable */
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 0 5px;
+    word-wrap: break-word;
+    text-shadow: 0 0 4px rgba(155,188,15,0.4);
+}
+
 .start-text {
     color: #ffff00;
     font-size: 16px;
@@ -1288,6 +1302,58 @@ body {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
 }
+
+/* Credits Section */
+.credits {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    box-sizing: border-box;
+    background: rgba(10, 10, 10, 0.4);
+    z-index: 50;
+}
+
+.credits-text {
+    margin: 2px 0;
+    font-family: 'Courier New', monospace;
+    line-height: 1.2;
+    word-wrap: break-word;
+    padding: 0 10px;
+}
+
+.credits-text a {
+    color: #9bbc0f;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.credits-text a:hover {
+    text-decoration: underline;
+    color: #a0cc0f;
+    text-shadow: 0 0 4px rgba(155,188,15,0.4);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .credits {
+        padding: 6px 0;
+        font-size: 9px;
+    }
+    
+    .credits-text {
+        margin: 1px 0;
+        line-height: 1.1;
+        padding: 0 8px;
+    }
+}
+
 
 .loading-text {
     animation: blink 1s infinite;
