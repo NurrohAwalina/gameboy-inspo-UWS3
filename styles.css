@@ -1155,13 +1155,12 @@ body {
 
 .tetris-game {
     background: #2d5016;
-    flex: 1; /* Take most available space */
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 5px; /* Minimal padding */
     overflow: visible;
-    min-height: 0;
 }
 
 #tetris-canvas {
@@ -1173,6 +1172,7 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
+    touch-action: pan-y;
 }
 
 .tetris-controls {
