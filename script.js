@@ -300,7 +300,18 @@ function skipTypewriter() {
         clearInterval(typewriterInterval);
         const messageContent = document.querySelector('.message-content');
         if (messageContent) {
-            const fullMessage = `Hi Cel,<br><br>Happy Birthday!<br><br>Hari ini aku pengen kamu ngerasain semua hal positif dan keajaiban yang cuma bisa didapetin kalo kamu ada di dunia ini. Semoga segala keinginanmu tercapai, apalagi yang kocak-kocak dan gak biasa, karena kamu tuh unik banget! Aku selalu percaya kalau kamu bisa melewati semua tantangan dengan kekuatan dan semangat yang luar biasa.<br><br>Terima kasih udah jadi bagian hidup aku yang paling berharga. Kamu bener-bener bikin hari-hari aku jadi lebih berarti dan penuh warna. Semoga di tahun yang baru ini, kamu makin bahagia, makin sukses, dan tentunya makin cantik (walaupun udah cantik banget sih!).<br><br>I love you so much! 💕`;
+            const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
+FROM: SOME INDONESIAN VIEWERS
+
+HI ALL! 👋
+
+Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch. 
+We've prepared some letters to share our thoughts. Please clik the "Gdrive Letters" main menu/button to acces and read them. 
+
+Thank you for reading this short massage! 🙌
+
+Forked & Modified by @studywithlina_ NurrohAwalina (github)
+Original repository by heryyy (github)`;
             messageContent.innerHTML = fullMessage;
             isTyping = false;
             messageContent.scrollTop = messageContent.scrollHeight;
