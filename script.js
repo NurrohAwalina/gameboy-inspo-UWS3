@@ -199,7 +199,7 @@ function initializeMessage() {
     const pageScreen = messageScreen.querySelector('.page-screen');
     if (pageScreen) {
         pageScreen.innerHTML = `
-            <div class="page-header">Short Massage</div>
+            <div class="page-header">Short Message</div>
             <div class="message-content">
                 <!-- Content will be populated by typewriter -->
             </div>
@@ -229,9 +229,9 @@ function startTypewriter() {
 HI ALL! 👋
 
 Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch. 
-We've prepared some letters to share our thoughts. Please clik the "Gdrive Letters" main menu/button to acces and read them. 
+We've prepared some letters to share our thoughts. Please click the "Gdrive Letters" main menu/button to access and read them. 
 
-Thank you for reading this short massage! 🙌
+Thank you for reading this short message! 🙌
 
 Forked & Modified by @studywithlina_ NurrohAwalina (github)
 Original repository by heryyy (github)`;
@@ -274,10 +274,10 @@ FROM: SOME INDONESIAN VIEWERS
 
 HI ALL! 👋
 
-Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch.
-We've prepared some letters to share our thoughts. Please clik the "Gdrive Letters" main menu/button to acces and read them. 
+Your journey throughout University War S3 reached us as viewers. Beyond the competition itself, we saw how you approached challenges, shared ideas, adjusted strategies, and worked together under pressure. The different moments along the way-from figuring things out to collaborating as a team - made the experience engaging to watch. 
+We've prepared some letters to share our thoughts. Please click the "Gdrive Letters" main menu/button to access and read them. 
 
-Thank you for reading this short massage! 🙌
+Thank you for reading this short message! 🙌
 
 Forked & Modified by @studywithlina_ NurrohAwalina (github)
 Original repository by heryyy (github)`;
