@@ -528,6 +528,7 @@ body {
 .action-buttons {
     display: flex;
     gap: 15px;
+    margin-right: 30px
 }
 
 .action-btn {
