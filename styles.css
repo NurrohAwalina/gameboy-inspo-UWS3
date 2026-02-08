@@ -1119,7 +1119,8 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
+    paddingbuttom: 80px;
     padding: 0;
 }
 
@@ -1159,7 +1160,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 5px; /* Minimal padding */
-    overflow: hidden;
+    overflow: visible;
     min-height: 0;
 }
 

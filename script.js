@@ -269,7 +269,9 @@ function skipTypewriter() {
         clearInterval(typewriterInterval);
         const messageContent = document.querySelector('.message-content');
         if (messageContent) {
-            const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
+            
+        const fullMessage = `TO: ALL CAST OF UNIVERSITY WAR S3
+
 FROM: SOME INDONESIAN VIEWERS
 
 HI ALL! 👋
@@ -282,7 +284,7 @@ Thank you for reading this short message! 🙌
 Forked & Modified by @studywithlina_ NurrohAwalina (github)
 Original repository by heryyy (github)`;
             
-            messageContent.innerHTML = fullMessage;
+            messageContent.innerHTML = fullMessage.replace(/\n/g, '<br>');
             isTyping = false;
             messageContent.scrollTop = messageContent.scrollHeight;
         }
@@ -607,9 +609,12 @@ function initializeTetris() {
     if (gameContainer) {
         const containerRect = gameContainer.getBoundingClientRect();
         
+        // Tambahan ruang untuk teks credits dan tombol Back di bawah (misal 100px)
+        const footerSpace = 100; 
+
         // Much larger maximum dimensions - use almost all available space
         const maxWidth = containerRect.width - 15; // Only 15px margin
-        const maxHeight = containerRect.height - 15; // Only 15px margin
+        const maxHeight = containerRect.height - footerSpace; // Only 15px margin
         
         // Maintain aspect ratio (approximately 1:2 for Tetris)
         const aspectRatio = 1 / 2;
