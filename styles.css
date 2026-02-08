@@ -334,7 +334,7 @@ body {
     text-align: center;
     padding: 0 5px;
     word-wrap: break-word;
-    text-shadow: 0 0 4px rgba(155,188,15,0.4);
+    text-shadow: 0 0 10px #9bbc0f, 0 0 20px rgba(155,188,15,0.6), 0 0 30px rgba(155,188,15,0.3);
 }
 
 .start-text {
