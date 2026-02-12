@@ -315,7 +315,7 @@ body {
     text-align: center;
 }
 
-.birthday-title {
+.project-title {
     color: #9bbc0f;
     font-size: 24px;
     font-weight: bold;
@@ -328,7 +328,7 @@ body {
     color: #9bbc0f;
     font-size: 16px; /* compact and readable */
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     line-height: 1.4;
     margin-bottom: 8px;
     text-align: center;
