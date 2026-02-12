@@ -317,7 +317,7 @@ body {
 
 .project-title {
     color: #9bbc0f;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
     text-shadow: 0 0 10px #9bbc0f;
@@ -327,8 +327,8 @@ body {
 .project-title {
     color: #9bbc0f;
     font-size: 16px; /* compact and readable */
-    font-weight: bold;
-    letter-spacing: 0.2px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
     line-height: 1.4;
     margin-bottom: 8px;
     text-align: center;
